@@ -2,7 +2,7 @@
 
 int main() {
     //Inicial data 
-    unsigned int value = 0b0000; //0, you have 32 bits to spend as flag or as number
+    unsigned int value = 0x0000; //0, you have 32 bits to spend as flag or as number
 
     //Changing that to 112
     //112/2 -> 56/2 -> 28/2 -> 14/2 -> 7/2 -> 3/2 - 1/2
@@ -10,8 +10,9 @@ int main() {
     
     //activating
     value |= (1 << 4); // Ativar o bit 4 (16)
-    value |= (1 << 5); // Ativar o bit 5 (32)
-    value |= (1 << 6); // Ativar o bit 6 (64)
+    value ^= (1 << 5); // Toggle o bit 5 (32)
+    value &= ~(1 << 6); // Clear o bit 6 (64)
+
 
     //Print the value
     printf("Value in decimal: %d\n", value);
