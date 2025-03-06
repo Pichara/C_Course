@@ -32,12 +32,14 @@ int main(void){
 }
 
 //Return ++number
-int preIncrement(int number){
+int preIncrement(int number, (*callback)(int, int)){
     return ++number;
 }
 
 //Return num1 * num2
 int multiply(int num1, int num2){
+    int a = divide(num1, num2);
+    printf("d%", a);
     return num1*num2;
 }
 
